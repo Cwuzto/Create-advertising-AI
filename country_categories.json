@@ -1,0 +1,395 @@
+{
+    "japan": [
+        "japan",
+        "japanese",
+        "nhật bản",
+        "japan",
+        "nippon"
+    ],
+    "france": [
+        "france",
+        "french",
+        "pháp",
+        "paris"
+    ],
+    "vietnam": [
+        "vietnam",
+        "vietnamese",
+        "việt nam",
+        "vn",
+        "hanoi",
+        "sài gòn"
+    ],
+    "usa": [
+        "usa",
+        "united states",
+        "america",
+        "mỹ",
+        "washington",
+        "new york"
+    ],
+    "italy": [
+        "italy",
+        "italian",
+        "italia",
+        "rome",
+        "venice",
+        "ý"
+    ],
+    "germany": [
+        "germany",
+        "german",
+        "đức",
+        "berlin"
+    ],
+    "china": [
+        "china",
+        "chinese",
+        "trung quốc",
+        "beijing",
+        "shanghai",
+        "tàu"
+    ],
+    "korea": [
+        "korea",
+        "south korea",
+        "korean",
+        "hàn quốc",
+        "seoul",
+        "hàn",
+        "hàn xẻng"
+    ],
+    "spain": [
+        "spain",
+        "spanish",
+        "tây ban nha",
+        "madrid",
+        "barcelona"
+    ],
+    "canada": [
+        "canada",
+        "canadian",
+        "ca",
+        "ottawa",
+        "toronto",
+        "xứ sở lá phong"
+    ],
+    "australia": [
+        "australia",
+        "australian",
+        "úc",
+        "canberra",
+        "sydney",
+        "xứ sở chuột túi"
+    ],
+    "brazil": [
+        "brazil",
+        "brazilian",
+        "br",
+        "brasilia",
+        "rio de janeiro",
+        "xứ sở samba"
+    ],
+    "india": [
+        "india",
+        "indian",
+        "ấn độ",
+        "new delhi",
+        "xứ sở sông hằng"
+    ],
+    "russia": [
+        "russia",
+        "russian",
+        "nga",
+        "moscow",
+        "xứ sở bạch dương"
+    ],
+    "mexico": [
+        "mexico",
+        "mexican",
+        "mêxico",
+        "mexico city",
+        "xứ sở nopal"
+    ],
+    "egypt": [
+        "egypt",
+        "egyptian",
+        "ai cập",
+        "cairo",
+        "xứ sở kim tự tháp"
+    ],
+    "thailand": [
+        "thailand",
+        "thai",
+        "thái lan",
+        "bangkok",
+        "xứ sở chùa vàng"
+    ],
+    "netherlands": [
+        "netherlands",
+        "dutch",
+        "hà lan",
+        "amsterdam",
+        "xứ sở hoa tulip"
+    ],
+    "switzerland": [
+        "switzerland",
+        "swiss",
+        "thụy sĩ",
+        "bern",
+        "vùng đất của sữa và mật ong"
+    ],
+    "ireland": [
+        "ireland",
+        "irish",
+        "ai len",
+        "dublin",
+        "đảo ngọc lục bảo"
+    ],
+    "iceland": [
+        "iceland",
+        "icelandic",
+        "băng đảo",
+        "reykjavik",
+        "vùng đất của lửa và băng"
+    ],
+    "bhutan": [
+        "bhutan",
+        "bhutanese",
+        "bh",
+        "thimphu",
+        "vùng đất rồng sấm"
+    ],
+    "mongolia": [
+        "mongolia",
+        "mongolian",
+        "mông cổ",
+        "ulaanbaatar",
+        "vùng đất của bầu trời xanh"
+    ],
+    "argentina": [
+        "argentina",
+        "argentine",
+        "argentinian",
+        "buenos aires"
+    ],
+    "chile": [
+        "chile",
+        "chilean",
+        "santiago"
+    ],
+    "colombia": [
+        "colombia",
+        "colombian",
+        "bogotá"
+    ],
+    "peru": [
+        "peru",
+        "peruvian",
+        "lima"
+    ],
+    "venezuela": [
+        "venezuela",
+        "venezuelan",
+        "caracas"
+    ],
+    "saudi arabia": [
+        "saudi arabia",
+        "saudi",
+        "ả rập xê út",
+        "riyadh",
+        "arab",
+        "ả rập"
+    ],
+    "israel": [
+        "israel",
+        "israeli",
+        "jerusalem"
+    ],
+    "turkey": [
+        "turkey",
+        "turkish",
+        "thổ nhĩ kỳ",
+        "ankara"
+    ],
+    "greece": [
+        "greece",
+        "greek",
+        "hy lạp",
+        "athens",
+        "xứ sở các vị thần"
+    ],
+    "portugal": [
+        "portugal",
+        "portuguese",
+        "bồ đào nha",
+        "lisbon"
+    ],
+    "sweden": [
+        "sweden",
+        "swedish",
+        "thụy điển",
+        "stockholm"
+    ],
+    "norway": [
+        "norway",
+        "norwegian",
+        "na uy",
+        "oslo"
+    ],
+    "finland": [
+        "finland",
+        "finnish",
+        "phần lan",
+        "helsinki"
+    ],
+    "denmark": [
+        "denmark",
+        "danish",
+        "đan mạch",
+        "copenhagen"
+    ],
+    "poland": [
+        "poland",
+        "polish",
+        "ba lan",
+        "warsaw"
+    ],
+    "czech republic": [
+        "czech republic",
+        "czech",
+        "cộng hòa séc",
+        "prague"
+    ],
+    "hungary": [
+        "hungary",
+        "hungarian",
+        "hungary",
+        "budapest"
+    ],
+    "austria": [
+        "austria",
+        "austrian",
+        "áo",
+        "vienna"
+    ],
+    "belgium": [
+        "belgium",
+        "belgian",
+        "bỉ",
+        "brussels",
+        "vương quốc socola"
+    ],
+    "ukraine": [
+        "ukraine",
+        "ukrainian",
+        "ukraina",
+        "kyiv",
+        "vựa bánh mì của châu âu"
+    ],
+    "romania": [
+        "romania",
+        "romanian",
+        "românia",
+        "bucharest"
+    ],
+    "croatia": [
+        "croatia",
+        "croatian",
+        "croatia",
+        "zagreb"
+    ],
+    "slovenia": [
+        "slovenia",
+        "slovenian",
+        "slovenia",
+        "ljubljana"
+    ],
+    "south africa": [
+        "south africa",
+        "south african",
+        "nam phi",
+        "pretoria",
+        "cape town"
+    ],
+    "kenya": [
+        "kenya",
+        "kenyan",
+        "kenya",
+        "nairobi"
+    ],
+    "singapore": [
+        "singapore",
+        "singaporean",
+        "sg",
+        "đảo quốc sư tử"
+    ],
+    "malaysia": [
+        "malaysia",
+        "malaysian",
+        "mã lai",
+        "kuala lumpur"
+    ],
+    "indonesia": [
+        "indonesia",
+        "indonesian",
+        "indo",
+        "jakarta",
+        "xứ vạn đảo"
+    ],
+    "philippines": [
+        "philippines",
+        "filipino",
+        "philippine",
+        "manila"
+    ],
+    "myanmar": [
+        "myanmar",
+        "burma",
+        "burmese",
+        "yangon",
+        "naypyidaw"
+    ],
+    "laos": [
+        "laos",
+        "laotian",
+        "lào",
+        "vientiane"
+    ],
+    "brunei": [
+        "brunei",
+        "bruneian",
+        "brunei darussalam",
+        "bandar seri begawan"
+    ],
+    "north korea": [
+        "north korea",
+        "north korean",
+        "triều tiên",
+        "bắc hàn",
+        "pyongyang"
+    ],
+    "taiwan": [
+        "taiwan",
+        "taiwanese",
+        "đài loan",
+        "taipei"
+    ],
+    "hong kong": [
+        "hong kong",
+        "hk",
+        "hương cảng"
+    ],
+    "macao": [
+        "macao",
+        "macau",
+        "ma cao"
+    ],
+    "maldives": [
+        "maldives",
+        "maldivian",
+        "male",
+        "thiên đường nghỉ dưỡng"
+    ],
+    "general": []
+}
