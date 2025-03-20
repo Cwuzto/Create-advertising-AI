@@ -173,9 +173,8 @@ def train_header_markov_models():
         return header_markov
 
 class GeneticAlgorithm:
-    def __init__(self, population_size, mutation_rate, max_generations, min_similarity=0.85):
+    def __init__(self, population_size, max_generations, min_similarity=0.85):
         self.population_size = population_size
-        self.mutation_rate = mutation_rate
         self.max_generations = max_generations
         self.min_similarity = min_similarity  # Ngưỡng tương đồng tối thiểu giữa câu gốc và biến thể
 
@@ -195,11 +194,6 @@ class GeneticAlgorithm:
             if keyword in sentence:
                 score += 10
         return score
-
-    def mutate(self, sentence):
-        # Vô hiệu hóa mutation: trả về câu gốc không thay đổi
-        return sentence
-
 
     def crossover(self, parent1, parent2):
         """
@@ -228,8 +222,8 @@ class GeneticAlgorithm:
         for _ in range(self.population_size):
             parent1, parent2 = random.choices(population, weights=fitness_scores, k=2)
             child1, child2 = self.crossover(parent1, parent2)
-            new_population.append(self.mutate(child1))
-            new_population.append(self.mutate(child2))
+            new_population.append(child1)
+            new_population.append(child2)
         return new_population[:self.population_size]
 
     def optimize(self, initial_sentences):
@@ -238,12 +232,6 @@ class GeneticAlgorithm:
         for _ in range(self.max_generations):
             population = self.evolve(population)
         return max(population, key=self.fitness)
-
-
-def mix_templates(templates):
-    """Trộn lẫn các mẫu từ nhiều nguồn để tạo ra câu quảng cáo đa dạng."""
-    mixed_text = " ".join(templates)  # Kết hợp tất cả các mẫu thành một văn bản lớn
-    return mixed_text
 
 def classify_country(destination):
         # Phân loại quốc gia dựa trên điểm đến để chọn mẫu quảng cáo phù hợp
@@ -405,7 +393,10 @@ class TourAdApp(QWidget):
         self.setGeometry(0, 0, 1920, 980)
         self.setStyleSheet("background-color: #f5f5f5;")  # Đặt màu nền
 
-        layout = QVBoxLayout()
+        main_layout = QHBoxLayout()  # Chia bố cục thành hai phần ngang
+
+        # Phần nhập thông tin (bên trái)
+        input_layout = QVBoxLayout()
         form_layout = QFormLayout()
 
         # Định dạng chung cho nhãn và ô nhập
@@ -498,24 +489,25 @@ class TourAdApp(QWidget):
             "background-color: #007bff; color: white; font-size: 20px; padding: 8px; border-radius: 5px;"
         )
         self.generate_button.clicked.connect(self.generate_ad)
+        form_layout.addRow(self.generate_button)
 
-        # Tạo layout ngang để chứa hai nút nằm cùng một hàng
-        button_layout = QHBoxLayout()
-        button_layout.addWidget(self.generate_button)
-        button_layout.setAlignment(Qt.AlignCenter)  # Căn giữa các nút
-        form_layout.addRow(button_layout)
-
-         # Kết quả quảng cáo
+        input_layout.addLayout(form_layout)
+         # Phần hiển thị kết quả (bên phải)
+        display_layout = QVBoxLayout()
         self.result_label = QLabel("Kết quả:")
         self.result_label.setStyleSheet(label_style)
         self.result_text = QTextEdit()
         self.result_text.setReadOnly(True)
         self.result_text.setStyleSheet("background-color: white; padding: 5px; font-size: 20px; border: 1px solid #aaa; border-radius: 5px;")
 
-        layout.addLayout(form_layout)
-        layout.addWidget(self.result_label)
-        layout.addWidget(self.result_text)
-        self.setLayout(layout)
+        display_layout.addWidget(self.result_label)
+        display_layout.addWidget(self.result_text)
+
+        # Thêm hai phần vào bố cục chính
+        main_layout.addLayout(input_layout, 1)
+        main_layout.addLayout(display_layout, 1)
+
+        self.setLayout(main_layout)
     
     def replace_placeholders(self, template, destination, duration, price, places, tour_name, audience, accommodation, tour_type, schedule, hotline, discount):
         """Thay thế placeholder trong template bằng dữ liệu thực tế, đảm bảo không bị lỗi nội dung."""
@@ -613,7 +605,7 @@ class TourAdApp(QWidget):
         if country_category in self.destination_markov:
             destination_ad = self.destination_markov[country_category].generate_text(max_length=500)
             if isinstance(destination_ad, str) and not self.is_similar(destination_ad, generated_sentences):
-                ga = GeneticAlgorithm(population_size=10, mutation_rate=0.05, max_generations=5)
+                ga = GeneticAlgorithm(population_size=10, max_generations=5)
                 optimized_destination_ad = ga.optimize([destination_ad])
                 formatted = self.replace_placeholders(
                     optimized_destination_ad,
@@ -635,7 +627,7 @@ class TourAdApp(QWidget):
         # Tạo quảng cáo cho thời gian (sử dụng MarkovChain chung)
         duration_ad = self.duration_markov.generate_text(max_length=150)
         if isinstance(duration_ad, str) and not self.is_similar(duration_ad, generated_sentences):
-            ga = GeneticAlgorithm(population_size=10, mutation_rate=0.05, max_generations=5)
+            ga = GeneticAlgorithm(population_size=10, max_generations=5)
             optimized_duration_ad = ga.optimize([duration_ad])
             formatted = self.replace_placeholders(
                 optimized_duration_ad,
@@ -657,7 +649,7 @@ class TourAdApp(QWidget):
         # Tạo quảng cáo cho giá (sử dụng MarkovChain chung)
         price_ad = self.price_markov.generate_text(max_length=100)
         if isinstance(price_ad, str) and not self.is_similar(price_ad, generated_sentences):
-            ga = GeneticAlgorithm(population_size=10, mutation_rate=0.05, max_generations=5)
+            ga = GeneticAlgorithm(population_size=10, max_generations=5)
             optimized_price_ad = ga.optimize([price_ad])
             formatted = self.replace_placeholders(
                 optimized_price_ad,
@@ -687,7 +679,7 @@ class TourAdApp(QWidget):
             if place_list and category in self.places_markov:
                 place_ad = self.places_markov[category].generate_text(max_length=180)
                 if isinstance(place_ad, str) and not self.is_similar(place_ad, generated_sentences):
-                    ga = GeneticAlgorithm(population_size=10, mutation_rate=0.05, max_generations=5)
+                    ga = GeneticAlgorithm(population_size=10, max_generations=5)
                     optimized_place_ad = ga.optimize([place_ad])
                     formatted = self.replace_placeholders(
                         optimized_place_ad,
